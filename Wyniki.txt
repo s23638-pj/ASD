@@ -1,0 +1,7 @@
+Czas losowania 0.22833919525146484
+Shell Sort: Rosn¹co 3.7713277339935303
+Shell Sort: Malej¹co 1.7724766731262207
+Merge Sort: Rosn¹co 1.2891511917114258
+Merge Sort: Malej¹co 1.1743991374969482
+Heap Sort: Rosn¹co 2.3032026290893555
+Heap Sort: Malej¹co 2.056529998779297
