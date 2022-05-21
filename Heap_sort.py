@@ -1,7 +1,5 @@
 import time
 
-
-
 def heapify_up(tab, n, i):
     largest = i
     l = 2 * i + 1
@@ -18,20 +16,20 @@ def heapify_up(tab, n, i):
         heapify_up(tab, n, largest)
 
 
-def heapify_down(tab, n, i):
-    smallest = i
-    l = 2 * i + 1
-    r = 2 * i + 2
-
-    if l < n and tab[i] > tab[l]:
-        smallest = l
-
-    if r < n and tab[smallest] > tab[r]:
-        smallest = r
-
-    if smallest != i:
-        tab[i], tab[smallest] = tab[smallest], tab[i]
-        heapify_down(tab, n, smallest)
+# def heapify_down(tab, n, i):
+#     smallest = i
+#     l = 2 * i + 1
+#     r = 2 * i + 2
+#
+#     if l < n and tab[i] > tab[l]:
+#         smallest = l
+#
+#     if r < n and tab[smallest] > tab[r]:
+#         smallest = r
+#
+#     if smallest != i:
+#         tab[i], tab[smallest] = tab[smallest], tab[i]
+#         heapify_down(tab, n, smallest)
 
 
 def heap_sort_up(tab):
@@ -46,16 +44,16 @@ def heap_sort_up(tab):
         heapify_up(tab, i, 0)
 
 
-def heap_sort_down(tab):
-    n = len(tab)
-
-    for i in range(n // 2, -1, -1):
-        heapify_down(tab, n, i)
-
-    for i in range(n - 1, 0, -1):
-        tab[i], tab[0] = tab[0], tab[i]
-
-        heapify_down(tab, i, 0)
+# def heap_sort_down(tab):
+#     n = len(tab)
+#
+#     for i in range(n // 2, -1, -1):
+#         heapify_down(tab, n, i)
+#
+#     for i in range(n - 1, 0, -1):
+#         tab[i], tab[0] = tab[0], tab[i]
+#
+#         heapify_down(tab, i, 0)
 
 
 if __name__ == '__main__':
@@ -65,6 +63,17 @@ if __name__ == '__main__':
     file = f.read().strip().split(' ')
 
     tab = [int(x) for x in file]
+    start_rand = time.time()
+    heap_sort_up(tab)
+    #print(tab)
+    end_rand = time.time()
+    time_rand = end_rand - start_rand
+
+    f = open("Sorted_up.txt", "r")
+    file = f.read().strip().split(' ')
+
+    tab = [int(x) for x in file]
+
 
     start_up = time.time()
     heap_sort_up(tab)
@@ -72,14 +81,19 @@ if __name__ == '__main__':
     end_up = time.time()
     time_up = end_up - start_up
 
+    f = open("Sorted_down.txt", "r")
+    file = f.read().strip().split(' ')
+
+    tab = [int(x) for x in file]
+
     start_down = time.time()
-    heap_sort_down(tab)
+    heap_sort_up(tab)
     #print(tab)
     end_down = time.time()
     time_down = end_down - start_down
 
-    print("\nHeap Sort: Rosnąco " + str(time_up) + "\nHeap Sort: Malejąco " + str(time_down))
+    print("\nHeap Sort: Z losowej " + str(time_rand) + "\nHeap Sort: Z rosnącej " + str(time_up) + "\nHeap Sort: Z odwrotnie posortowanej " + str(time_down))
     f.close()
     fhs = open("Wyniki.txt", "a")
-    fhs.write("\nHeap Sort: Rosnąco " + str(time_up) + "\nHeap Sort: Malejąco " + str(time_down))
+    fhs.write("\nHeap Sort: Z losowej " + str(time_rand) + "\nHeap Sort: Z rosnącej " + str(time_up) + "\nHeap Sort: Z odwrotnie posortowanej " + str(time_down))
     fhs.close()
