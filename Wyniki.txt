@@ -1,7 +1,10 @@
-Czas losowania 0.22833919525146484
-Shell Sort: Rosn¹co 3.7713277339935303
-Shell Sort: Malej¹co 1.7724766731262207
-Merge Sort: Rosn¹co 1.2891511917114258
-Merge Sort: Malej¹co 1.1743991374969482
-Heap Sort: Rosn¹co 2.3032026290893555
-Heap Sort: Malej¹co 2.056529998779297
+Czas losowania 0.39351701736450195
+Shell Sort: Z losowej: 5.190136194229126
+Shell Sort: Z posortowanej: 0.9922192096710205
+Shell Sort: Z odwrotnie posortowanej: 1.707021951675415
+Merge Sort: Z losowej: 1.9821195602416992
+Merge Sort: Z posortowanej: 1.3841381072998047
+Merge Sort: Z odwrotnie posortowanej: 1.3825163841247559
+Heap Sort: Z losowej 3.3387980461120605
+Heap Sort: Z rosn¹cej 2.7489335536956787
+Heap Sort: Z odwrotnie posortowanej 2.53873348236084
